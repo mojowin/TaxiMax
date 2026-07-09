@@ -3,7 +3,7 @@ const selectedPlan = document.querySelector("#selectedPlan");
 const lockNotice = document.querySelector("#lockNotice");
 const signupForm = document.querySelector("#signupForm");
 const formMessage = document.querySelector("#formMessage");
-const m2Options = document.querySelectorAll('input[name="m2Device"]');
+const c2Options = document.querySelectorAll('input[name="c2Device"]');
 const contractPriceSummary = document.querySelector("#contractPriceSummary");
 const activateContractButton = document.querySelector("#activateContractButton");
 const cancelSubscriptionButton = document.querySelector("#cancelSubscriptionButton");
@@ -15,7 +15,7 @@ const cancelMessage = document.querySelector("#cancelMessage");
 const storageKeys = {
   active: "carmaxSubscriptionActive",
   cancellationRequested: "carmaxCancellationRequested",
-  m2Device: "carmaxM2Device",
+  c2Device: "carmaxC2Device",
   planPeriod: "carmaxPlanPeriod",
   planPrice: "carmaxPlanPrice",
 };
@@ -35,11 +35,11 @@ function saveCurrentPlan() {
   localStorage.setItem(storageKeys.planPrice, String(currentPlan.price));
 }
 
-function getSelectedM2Option() {
-  return document.querySelector('input[name="m2Device"]:checked');
+function getSelectedC2Option() {
+  return document.querySelector('input[name="c2Device"]:checked');
 }
 
-function getAdjustedPrice(basePrice, option = getSelectedM2Option()) {
+function getAdjustedPrice(basePrice, option = getSelectedC2Option()) {
   const adjustment = Number(option?.dataset.adjust || 0);
   return Number(basePrice) + adjustment;
 }
@@ -65,7 +65,7 @@ function updateSelectedPlanText() {
   saveCurrentPlan();
 }
 
-function updatePlanPrices(option = getSelectedM2Option()) {
+function updatePlanPrices(option = getSelectedC2Option()) {
   planButtons.forEach((button) => {
     const basePrice = button.dataset.basePrice || button.dataset.price;
     const nextPrice = getAdjustedPrice(basePrice, option);
@@ -141,7 +141,7 @@ if (signupForm && formMessage) {
   });
 }
 
-function updateM2Summary(option) {
+function updateC2Summary(option) {
   if (!option) {
     return;
   }
@@ -154,11 +154,11 @@ function updateM2Summary(option) {
   }
 }
 
-m2Options.forEach((option) => {
+c2Options.forEach((option) => {
   option.addEventListener("change", () => {
-    localStorage.setItem(storageKeys.m2Device, option.value);
+    localStorage.setItem(storageKeys.c2Device, option.value);
     updatePlanPrices(option);
-    updateM2Summary(option);
+    updateC2Summary(option);
 
     if (formMessage) {
       formMessage.textContent = "";
@@ -168,23 +168,23 @@ m2Options.forEach((option) => {
 
   if (option.checked) {
     updatePlanPrices(option);
-    updateM2Summary(option);
+    updateC2Summary(option);
   }
 });
 
-function hydrateM2Selection() {
+function hydrateC2Selection() {
   hydratePlanSelection();
 
-  const savedM2 = localStorage.getItem(storageKeys.m2Device);
-  const savedOption = savedM2
-    ? document.querySelector(`input[name="m2Device"][value="${savedM2}"]`)
+  const savedC2 = localStorage.getItem(storageKeys.c2Device);
+  const savedOption = savedC2
+    ? document.querySelector(`input[name="c2Device"][value="${savedC2}"]`)
     : null;
-  const option = savedOption || getSelectedM2Option();
+  const option = savedOption || getSelectedC2Option();
 
   if (option) {
     option.checked = true;
     updatePlanPrices(option);
-    updateM2Summary(option);
+    updateC2Summary(option);
   }
 }
 
@@ -200,7 +200,7 @@ function refreshSubscriptionControls() {
   }
 }
 
-hydrateM2Selection();
+hydrateC2Selection();
 refreshSubscriptionControls();
 
 if (activateContractButton) {
