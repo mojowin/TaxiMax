@@ -13,11 +13,11 @@ const cancelContractPeriod = document.querySelector("#cancelContractPeriod");
 const cancelMessage = document.querySelector("#cancelMessage");
 
 const storageKeys = {
-  active: "carmaxSubscriptionActive",
-  cancellationRequested: "carmaxCancellationRequested",
-  c2Device: "carmaxC2Device",
-  planPeriod: "carmaxPlanPeriod",
-  planPrice: "carmaxPlanPrice",
+  active: "taxiMaxSubscriptionActive",
+  cancellationRequested: "taxiMaxCancellationRequested",
+  c2Device: "taxiMaxC2Device",
+  planPeriod: "taxiMaxPlanPeriod",
+  planPrice: "taxiMaxPlanPrice",
 };
 
 const basePrices = {
