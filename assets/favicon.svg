@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Carmax">
+  <rect width="64" height="64" rx="14" fill="#ffc928"/>
+  <path d="M13 40h38v7H13z" fill="#202124"/>
+  <path d="M17 31h30l-5-10H22z" fill="#202124"/>
+  <path d="M21 24h18l2 4H19z" fill="#fffdf8"/>
+  <circle cx="22" cy="45" r="4" fill="#fffdf8"/>
+  <circle cx="42" cy="45" r="4" fill="#fffdf8"/>
+  <path d="M11 15h42v5H11z" fill="#202124"/>
+  <path d="M16 15h5v5h-5zm10 0h5v5h-5zm10 0h5v5h-5zm10 0h5v5h-5z" fill="#fffdf8"/>
+</svg>

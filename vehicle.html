@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vehicle | Carmax</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="app-page">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Carmax home">
+        <span class="brand-mark">C</span>
+        <span>Carmax</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html#signup">Account</a>
+        <a class="current" href="vehicle.html">Vehicle</a>
+        <a href="payment.html">Payment</a>
+        <a href="contract.html">Contract</a>
+      </nav>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero">
+        <p class="eyebrow">Step 2</p>
+        <h1>Vehicle</h1>
+        <p>
+          Add taxi registration and software license details before moving to
+          monthly card payment.
+        </p>
+      </section>
+
+      <section class="section app-shell page-shell" aria-labelledby="vehicle-title">
+        <aside class="account-sidebar">
+          <p class="eyebrow">Registration</p>
+          <h2>Customer setup</h2>
+          <ol class="steps">
+            <li><a href="index.html#signup"><span>1</span> Account</a></li>
+            <li class="active"><a href="vehicle.html"><span>2</span> Vehicle</a></li>
+            <li><a href="payment.html"><span>3</span> Payment</a></li>
+            <li><a href="contract.html"><span>4</span> Contract</a></li>
+          </ol>
+        </aside>
+
+        <div class="registration-panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Vehicle page</p>
+              <h3 id="vehicle-title">Taxi and license information</h3>
+            </div>
+            <span class="status-pill">Vehicle draft</span>
+          </div>
+
+          <form class="signup-form">
+            <section class="form-card">
+              <div class="form-card-heading">
+                <span class="card-icon">02</span>
+                <div>
+                  <h4>Vehicle details</h4>
+                  <p>Connect the account to the taxi car used for service.</p>
+                </div>
+              </div>
+              <div class="form-grid">
+                <label>
+                  Car register number
+                  <input type="text" name="registration" placeholder="ABC-123" required />
+                </label>
+                <label>
+                  Software license number
+                  <input type="text" name="license" placeholder="CMX-2026-0001" required />
+                </label>
+                <label>
+                  Vehicle type
+                  <input type="text" name="vehicleType" placeholder="Taxi sedan" />
+                </label>
+                <label>
+                  Operating city
+                  <input type="text" name="city" placeholder="Helsinki" />
+                </label>
+              </div>
+            </section>
+
+            <section class="info-grid">
+              <div class="mini-card">
+                <span>License status</span>
+                <strong>Ready for activation</strong>
+              </div>
+              <div class="mini-card">
+                <span>Next step</span>
+                <strong>Monthly card payment</strong>
+              </div>
+            </section>
+
+            <div class="page-actions">
+              <a class="button ghost" href="index.html#signup">Back to account</a>
+              <a class="button primary" href="payment.html">Continue to payment</a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

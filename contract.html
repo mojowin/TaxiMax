@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contract | Carmax</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="app-page">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Carmax home">
+        <span class="brand-mark">C</span>
+        <span>Carmax</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html#signup">Account</a>
+        <a href="vehicle.html">Vehicle</a>
+        <a href="payment.html">Payment</a>
+        <a class="current" href="contract.html">Contract</a>
+      </nav>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero">
+        <p class="eyebrow">Step 4</p>
+        <h1>Contract</h1>
+        <p>
+          Review the fixed service period before activating the Carmax account.
+        </p>
+      </section>
+
+      <section class="section app-shell page-shell" aria-labelledby="contract-page-title">
+        <aside class="account-sidebar">
+          <p class="eyebrow">Registration</p>
+          <h2>Contract review</h2>
+          <ol class="steps">
+            <li><a href="index.html#signup"><span>1</span> Account</a></li>
+            <li><a href="vehicle.html"><span>2</span> Vehicle</a></li>
+            <li><a href="payment.html"><span>3</span> Payment</a></li>
+            <li class="active"><a href="contract.html"><span>4</span> Contract</a></li>
+          </ol>
+        </aside>
+
+        <div class="registration-panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Contract page</p>
+              <h3 id="contract-page-title">Fixed monthly subscription</h3>
+            </div>
+            <span class="status-pill">Ready to sign</span>
+          </div>
+
+          <div class="signup-form">
+            <section class="contract-summary">
+              <div class="review-card large-review">
+                <div>
+                  <span>Contract options</span>
+                  <strong id="contractPriceSummary">C2 Normal: 1 year at 89 € / month or 2 years at 79 € / month</strong>
+                </div>
+                <div>
+                  <span>Payment method</span>
+                  <strong>Credit card charged every month</strong>
+                </div>
+                <div>
+                  <span>Cancellation rule</span>
+                  <strong>No cancellation before the selected 1-year or 2-year period ends</strong>
+                </div>
+              </div>
+            </section>
+
+            <section class="form-card" aria-labelledby="m2-title">
+              <div class="form-card-heading">
+                <span class="card-icon">M2</span>
+                <div>
+                  <h4 id="m2-title">M2 device choice</h4>
+                  <p>Choose the device package connected to the monthly contract.</p>
+                </div>
+              </div>
+
+              <div class="radio-list" role="radiogroup" aria-label="M2 device choice">
+                <label class="radio-option">
+                  <input type="radio" name="m2Device" value="C2 Mini" data-adjust="-10" />
+                  <span>
+                    <strong>C2 Mini</strong>
+                    <small>10 € less than normal price</small>
+                  </span>
+                  <b data-price-preview="mini">79 € / 69 €</b>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="m2Device" value="C2 Normal" data-adjust="0" checked />
+                  <span>
+                    <strong>C2 Normal</strong>
+                    <small>Normal contract price</small>
+                  </span>
+                  <b data-price-preview="normal">89 € / 79 €</b>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="m2Device" value="C2 Prenium" data-adjust="20" />
+                  <span>
+                    <strong>C2 Prenium</strong>
+                    <small>20 € more than normal contract price</small>
+                  </span>
+                  <b data-price-preview="mirror">109 € / 99 €</b>
+                </label>
+              </div>
+            </section>
+
+            <section class="terms-list" aria-label="Contract terms">
+              <article class="term-card">
+                <span>01</span>
+                <h4>Monthly payment</h4>
+                <p>The customer is charged from the saved credit card every month.</p>
+              </article>
+              <article class="term-card">
+                <span>02</span>
+                <h4>Fixed period</h4>
+                <p>The user chooses either a 1-year or 2-year contract period.</p>
+              </article>
+              <article class="term-card">
+                <span>03</span>
+                <h4>No early cancellation</h4>
+                <p>The subscription cannot be cancelled before the chosen contract period ends.</p>
+              </article>
+            </section>
+
+            <label class="checkbox">
+              <input type="checkbox" required />
+              <span>
+                I accept the fixed contract period and monthly credit card
+                payment terms.
+              </span>
+            </label>
+
+            <div class="page-actions">
+              <a class="button ghost" href="payment.html">Back to payment</a>
+              <button class="button danger" id="cancelSubscriptionButton" type="button" disabled>
+                Cancel subscription
+              </button>
+              <button class="button primary" id="activateContractButton" type="button">Activate contract</button>
+            </div>
+            <p class="form-message" id="contractMessage"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

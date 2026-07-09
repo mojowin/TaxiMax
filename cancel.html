@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cancel Contract | Carmax</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="app-page">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Carmax home">
+        <span class="brand-mark">C</span>
+        <span>Carmax</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html#signup">Account</a>
+        <a href="vehicle.html">Vehicle</a>
+        <a href="payment.html">Payment</a>
+        <a href="contract.html">Contract</a>
+      </nav>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero">
+        <p class="eyebrow">Subscription</p>
+        <h1>Cancel contract</h1>
+        <p>
+          Tell us why you want to cancel. The cancellation will be scheduled
+          for the end of the selected contract period.
+        </p>
+      </section>
+
+      <section class="section app-shell page-shell" aria-labelledby="cancel-title">
+        <aside class="account-sidebar">
+          <p class="eyebrow">Contract</p>
+          <h2>Cancellation</h2>
+          <ol class="steps">
+            <li><a href="index.html#signup"><span>1</span> Account</a></li>
+            <li><a href="vehicle.html"><span>2</span> Vehicle</a></li>
+            <li><a href="payment.html"><span>3</span> Payment</a></li>
+            <li class="active"><a href="contract.html"><span>4</span> Contract</a></li>
+          </ol>
+        </aside>
+
+        <div class="registration-panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Cancel contract page</p>
+              <h3 id="cancel-title">Reason for cancellation</h3>
+            </div>
+            <span class="status-pill">End of term</span>
+          </div>
+
+          <form class="signup-form" id="cancelContractForm">
+            <section class="review-card large-review">
+              <div>
+                <span>Selected contract</span>
+                <strong id="cancelContractPeriod">1 year contract</strong>
+              </div>
+              <div>
+                <span>Cancellation timing</span>
+                <strong>The Contract will be cancelled when subscription time ends</strong>
+              </div>
+            </section>
+
+            <section class="form-card" aria-labelledby="reason-title">
+              <div class="form-card-heading">
+                <span class="card-icon">?</span>
+                <div>
+                  <h4 id="reason-title">Cancellation reason</h4>
+                  <p>Choose the reason that best matches your situation.</p>
+                </div>
+              </div>
+
+              <div class="radio-list reason-list" role="radiogroup" aria-label="Cancellation reason">
+                <label class="radio-option">
+                  <input type="radio" name="cancelReason" value="I don't drive taxi anymore" required />
+                  <span><strong>I don't drive taxi anymore</strong></span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="cancelReason" value="I bought different taxi meter" />
+                  <span><strong>I bought different taxi meter</strong></span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="cancelReason" value="contract is too expensive" />
+                  <span><strong>contract is too expensive</strong></span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="cancelReason" value="Other reason" />
+                  <span><strong>Other reason</strong></span>
+                </label>
+              </div>
+            </section>
+
+            <p class="notice-text">The Contract will be cancelled when subscription time ends.</p>
+
+            <div class="page-actions">
+              <a class="button ghost" href="contract.html">Back to contract</a>
+              <button class="button danger" type="submit">Cancel contract</button>
+            </div>
+            <p class="form-message" id="cancelMessage"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

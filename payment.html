@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment | Carmax</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="app-page">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Carmax home">
+        <span class="brand-mark">C</span>
+        <span>Carmax</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html#signup">Account</a>
+        <a href="vehicle.html">Vehicle</a>
+        <a class="current" href="payment.html">Payment</a>
+        <a href="contract.html">Contract</a>
+      </nav>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero">
+        <p class="eyebrow">Step 3</p>
+        <h1>Payment</h1>
+        <p>
+          Select a fixed contract period and save the credit card for monthly
+          payments.
+        </p>
+      </section>
+
+      <section class="section app-shell page-shell" aria-labelledby="payment-title">
+        <aside class="account-sidebar">
+          <p class="eyebrow">Registration</p>
+          <h2>Billing setup</h2>
+          <ol class="steps">
+            <li><a href="index.html#signup"><span>1</span> Account</a></li>
+            <li><a href="vehicle.html"><span>2</span> Vehicle</a></li>
+            <li class="active"><a href="payment.html"><span>3</span> Payment</a></li>
+            <li><a href="contract.html"><span>4</span> Contract</a></li>
+          </ol>
+        </aside>
+
+        <div class="registration-panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Payment page</p>
+              <h3 id="payment-title">Monthly card payment</h3>
+            </div>
+            <span class="status-pill">Card required</span>
+          </div>
+
+          <form class="signup-form" id="paymentForm">
+            <section class="form-card device-selector" aria-labelledby="payment-m2-title">
+              <div class="form-card-heading">
+                <span class="card-icon">M2</span>
+                <div>
+                  <h4 id="payment-m2-title">M2 device choice</h4>
+                  <p>Choose Mini, Normal, or Mirror to update contract prices.</p>
+                </div>
+              </div>
+              <div class="radio-list" role="radiogroup" aria-label="M2 device choice">
+                <label class="radio-option">
+                  <input type="radio" name="m2Device" value="C2 Mini" data-adjust="-10" />
+                  <span>
+                    <strong>C2 Mini</strong>
+                    <small>10 € less than normal price</small>
+                  </span>
+                  <b>79 € / 69 €</b>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="m2Device" value="C2 Normal" data-adjust="0" checked />
+                  <span>
+                    <strong>C2 Normal</strong>
+                    <small>Normal contract price</small>
+                  </span>
+                  <b>89 € / 79 €</b>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="m2Device" value="C2 Prenium" data-adjust="20" />
+                  <span>
+                    <strong>C2 Prenium</strong>
+                    <small>20 € more than normal contract price</small>
+                  </span>
+                  <b>109 € / 99 €</b>
+                </label>
+              </div>
+            </section>
+
+            <section class="form-card">
+              <div class="form-card-heading">
+                <span class="card-icon">03</span>
+                <div>
+                  <h4>Choose contract period</h4>
+                  <p>Payment is monthly, contract length is fixed.</p>
+                </div>
+              </div>
+              <div class="plans compact-plans" role="radiogroup" aria-label="Payment contract period">
+                <button class="plan active" type="button" data-plan="1 year" data-base-price="89" data-price="89" aria-pressed="true">
+                  <span class="plan-topline">
+                    <span class="plan-icon">12</span>
+                    <span class="plan-state">Selected</span>
+                  </span>
+                  <span class="plan-period">1 year</span>
+                  <span class="plan-price">89 € <small>/ month</small></span>
+                </button>
+                <button class="plan featured" type="button" data-plan="2 years" data-base-price="79" data-price="79" aria-pressed="false">
+                  <span class="plan-topline">
+                    <span class="plan-icon">24</span>
+                    <span class="badge">Best value</span>
+                  </span>
+                  <span class="plan-period">2 years</span>
+                  <span class="plan-price">79 € <small>/ month</small></span>
+                </button>
+              </div>
+            </section>
+
+            <section class="payment-grid">
+              <div class="form-card">
+                <div class="form-card-heading">
+                  <span class="card-icon">CC</span>
+                  <div>
+                    <h4>Credit card</h4>
+                    <p>Used for automatic monthly billing.</p>
+                  </div>
+                </div>
+                <div class="form-grid">
+                  <label class="wide">
+                    Card number
+                    <input type="text" name="card" inputmode="numeric" maxlength="19" placeholder="1234 5678 9012 3456" required />
+                  </label>
+                  <label>
+                    Expiry
+                    <input type="text" name="expiry" inputmode="numeric" maxlength="5" placeholder="08/29" required />
+                  </label>
+                  <label>
+                    CVC
+                    <input type="text" name="cvc" inputmode="numeric" maxlength="4" placeholder="123" required />
+                  </label>
+                </div>
+              </div>
+
+              <div class="review-card">
+                <div>
+                  <span>Selected contract</span>
+                  <strong id="selectedPlan">1 year, 89 € / month</strong>
+                </div>
+                <div>
+                  <span>Billing</span>
+                  <strong>Automatic monthly card charge</strong>
+                </div>
+                <div>
+                  <span>Cancellation</span>
+                  <strong id="lockNotice">After 1 year contract ends</strong>
+                </div>
+              </div>
+            </section>
+
+            <div class="page-actions">
+              <a class="button ghost" href="vehicle.html">Back to vehicle</a>
+              <a class="button primary" href="contract.html">Review contract</a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

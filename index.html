@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carmax Taxi Software</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Carmax home">
+        <span class="brand-mark">C</span>
+        <span>Carmax</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html#signup">Account</a>
+        <a href="vehicle.html">Vehicle</a>
+        <a href="payment.html">Payment</a>
+        <a href="contract.html">Contract</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <img
+          class="hero-image"
+          src="assets/taxi-hero.png"
+          alt="Yellow taxi car in a modern city street"
+        />
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Taxi business software</p>
+          <h1>Carmax</h1>
+          <p class="hero-copy">
+            A clear monthly subscription for taxi drivers and fleet owners,
+            with fixed 1-year or 2-year contract periods.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#signup">Start registration</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section ui-section" id="plans" aria-labelledby="plans-title">
+        <div class="section-heading">
+          <p class="eyebrow">Monthly card payment</p>
+          <h2 id="plans-title">Choose your contract period</h2>
+          <p>
+            The customer pays monthly by card, while the service contract stays
+            active for the full selected period.
+          </p>
+        </div>
+
+        <section class="form-card device-selector" aria-labelledby="home-m2-title">
+          <div class="form-card-heading">
+            <span class="card-icon">M2</span>
+            <div>
+              <h4 id="home-m2-title">M2 device choice</h4>
+              <p>Choose the device package before selecting the contract period.</p>
+            </div>
+          </div>
+          <div class="radio-list" role="radiogroup" aria-label="M2 device choice">
+            <label class="radio-option">
+              <input type="radio" name="m2Device" value="C2 Mini" data-adjust="-10" />
+              <span>
+                <strong>C2 Mini</strong>
+                <small>10 € less than normal price</small>
+              </span>
+              <b>79 € / 69 €</b>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="m2Device" value="C2 Normal" data-adjust="0" checked />
+              <span>
+                <strong>C2 Normal</strong>
+                <small>Normal contract price</small>
+              </span>
+              <b>89 € / 79 €</b>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="m2Device" value="C2 Prenium" data-adjust="20" />
+              <span>
+                <strong>C2 Prenium</strong>
+                <small>20 € more than normal contract price</small>
+              </span>
+              <b>109 € / 99 €</b>
+            </label>
+          </div>
+        </section>
+
+        <div class="plans" role="radiogroup" aria-label="Contract period">
+          <button class="plan active" type="button" data-plan="1 year" data-base-price="89" data-price="89" aria-pressed="true">
+            <span class="plan-topline">
+              <span class="plan-icon">12</span>
+              <span class="plan-state">Selected</span>
+            </span>
+            <span class="plan-period">1 year</span>
+            <span class="plan-price">89 € <small>/ month</small></span>
+            <span class="plan-note">Billed monthly from the saved card.</span>
+          </button>
+          <button class="plan featured" type="button" data-plan="2 years" data-base-price="79" data-price="79" aria-pressed="false">
+            <span class="plan-topline">
+              <span class="plan-icon">24</span>
+              <span class="badge">Best value</span>
+            </span>
+            <span class="plan-period">2 years</span>
+            <span class="plan-price">79 € <small>/ month</small></span>
+            <span class="plan-note">Lower monthly price for a longer commitment.</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="section app-shell" id="signup" aria-labelledby="signup-title">
+        <aside class="account-sidebar" aria-label="Registration progress">
+          <p class="eyebrow">Create account</p>
+          <h2 id="signup-title">Customer setup</h2>
+          <p>
+            Add your contact, vehicle, and software license information. The
+            selected contract is attached to this account.
+          </p>
+          <ol class="steps">
+            <li class="active"><a href="index.html#signup"><span>1</span> Account</a></li>
+            <li><a href="vehicle.html"><span>2</span> Vehicle</a></li>
+            <li><a href="payment.html"><span>3</span> Payment</a></li>
+            <li><a href="contract.html"><span>4</span> Contract</a></li>
+          </ol>
+        </aside>
+
+        <div class="registration-panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Registration interface</p>
+              <h3>New Carmax customer</h3>
+            </div>
+            <span class="status-pill">Draft account</span>
+          </div>
+
+          <form class="signup-form" id="signupForm">
+            <section class="form-card" aria-labelledby="account-title">
+              <div class="form-card-heading">
+                <span class="card-icon">01</span>
+                <div>
+                  <h4 id="account-title">Account information</h4>
+                  <p>Email, name, phone number, and address.</p>
+                </div>
+              </div>
+              <div class="form-grid">
+                <label>
+                  Email
+                  <input type="email" name="email" placeholder="driver@example.com" required />
+                </label>
+                <label>
+                  Full name
+                  <input type="text" name="name" placeholder="Alex Driver" required />
+                </label>
+                <label>
+                  Phone number
+                  <input type="tel" name="phone" placeholder="+358 40 123 4567" required />
+                </label>
+                <label class="wide">
+                  Address
+                  <input type="text" name="address" placeholder="Street, city, postal code" required />
+                </label>
+              </div>
+            </section>
+
+            <section class="form-card" aria-labelledby="vehicle-title">
+              <div class="form-card-heading">
+                <span class="card-icon">02</span>
+                <div>
+                  <h4 id="vehicle-title">Vehicle and software</h4>
+                  <p>Connect the subscription to the taxi and license.</p>
+                </div>
+              </div>
+              <div class="form-grid">
+                <label>
+                  Car register number
+                  <input type="text" name="registration" placeholder="ABC-123" required />
+                </label>
+                <label>
+                  Software license number
+                  <input type="text" name="license" placeholder="CMX-2026-0001" required />
+                </label>
+              </div>
+            </section>
+
+            <section class="payment-grid" aria-label="Payment and contract review">
+              <div class="form-card">
+                <div class="form-card-heading">
+                  <span class="card-icon">03</span>
+                  <div>
+                    <h4>Credit card payment</h4>
+                    <p>Monthly charge from the saved card.</p>
+                  </div>
+                </div>
+                <label>
+                  Credit card number
+                  <input
+                    type="text"
+                    name="card"
+                    inputmode="numeric"
+                    maxlength="19"
+                    placeholder="1234 5678 9012 3456"
+                    required
+                  />
+                </label>
+              </div>
+
+              <div class="review-card">
+                <div>
+                  <span>Selected contract</span>
+                  <strong id="selectedPlan">1 year, 89 € / month</strong>
+                </div>
+                <div>
+                  <span>Billing</span>
+                  <strong>Monthly card payment</strong>
+                </div>
+                <div>
+                  <span>Cancellation</span>
+                  <strong id="lockNotice">After 1 year contract ends</strong>
+                </div>
+              </div>
+            </section>
+
+            <label class="checkbox">
+              <input type="checkbox" name="agreement" required />
+              <span>
+                I understand the monthly card payments continue until the chosen
+                1-year or 2-year contract period ends, and the contract cannot
+                be cancelled before that period is finished.
+              </span>
+            </label>
+
+            <button class="button primary submit" type="submit">Create account</button>
+            <a class="button ghost next-link" href="vehicle.html">Continue to vehicle</a>
+            <p class="form-message" id="formMessage"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="contract-band" id="contract" aria-labelledby="contract-title">
+        <div>
+          <p class="eyebrow">Contract terms</p>
+          <h2 id="contract-title">Fixed period, predictable monthly billing</h2>
+        </div>
+        <p>
+          Customers choose either a 1-year or 2-year service contract. Payment
+          is charged monthly from the customer credit card, and cancellation is
+          available after the selected contract period has finished.
+        </p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
