@@ -23,6 +23,7 @@ const storageKeys = {
 const basePrices = {
   oneYear: 89,
   twoYears: 79,
+  fortyEightMonths: 69,
 };
 
 let currentPlan = {
@@ -148,9 +149,10 @@ function updateC2Summary(option) {
 
   const oneYear = getAdjustedPrice(basePrices.oneYear, option);
   const twoYears = getAdjustedPrice(basePrices.twoYears, option);
+  const fortyEightMonths = getAdjustedPrice(basePrices.fortyEightMonths, option);
 
   if (contractPriceSummary) {
-    contractPriceSummary.textContent = `${option.value}: 1 year at ${oneYear} € / month or 2 years at ${twoYears} € / month`;
+    contractPriceSummary.textContent = `${option.value}: 1 year at ${oneYear} € / month, 2 years at ${twoYears} € / month, or 48 months at ${fortyEightMonths} € / month`;
   }
 }
 
