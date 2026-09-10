@@ -3,7 +3,7 @@ const selectedPlan = document.querySelector("#selectedPlan");
 const lockNotice = document.querySelector("#lockNotice");
 const signupForm = document.querySelector("#signupForm");
 const formMessage = document.querySelector("#formMessage");
-const c2Options = document.querySelectorAll('input[name="c2Device"]');
+const m2Options = document.querySelectorAll('input[name="m2Meter"]');
 const contractPriceSummary = document.querySelector("#contractPriceSummary");
 const activateContractButton = document.querySelector("#activateContractButton");
 const cancelSubscriptionButton = document.querySelector("#cancelSubscriptionButton");
@@ -13,11 +13,11 @@ const cancelContractPeriod = document.querySelector("#cancelContractPeriod");
 const cancelMessage = document.querySelector("#cancelMessage");
 
 const storageKeys = {
-  active: "taxiMaxSubscriptionActive",
-  cancellationRequested: "taxiMaxCancellationRequested",
-  c2Device: "taxiMaxC2Device",
-  planPeriod: "taxiMaxPlanPeriod",
-  planPrice: "taxiMaxPlanPrice",
+  active: "meterOnSubscriptionActive",
+  cancellationRequested: "meterOnCancellationRequested",
+  m2Meter: "meterOnM2Meter",
+  planPeriod: "meterOnPlanPeriod",
+  planPrice: "meterOnPlanPrice",
 };
 
 const basePrices = {
@@ -36,11 +36,11 @@ function saveCurrentPlan() {
   localStorage.setItem(storageKeys.planPrice, String(currentPlan.price));
 }
 
-function getSelectedC2Option() {
-  return document.querySelector('input[name="c2Device"]:checked');
+function getSelectedM2Option() {
+  return document.querySelector('input[name="m2Meter"]:checked');
 }
 
-function getAdjustedPrice(basePrice, option = getSelectedC2Option()) {
+function getAdjustedPrice(basePrice, option = getSelectedM2Option()) {
   const adjustment = Number(option?.dataset.adjust || 0);
   return Number(basePrice) + adjustment;
 }
@@ -66,7 +66,7 @@ function updateSelectedPlanText() {
   saveCurrentPlan();
 }
 
-function updatePlanPrices(option = getSelectedC2Option()) {
+function updatePlanPrices(option = getSelectedM2Option()) {
   planButtons.forEach((button) => {
     const basePrice = button.dataset.basePrice || button.dataset.price;
     const nextPrice = getAdjustedPrice(basePrice, option);
@@ -142,7 +142,7 @@ if (signupForm && formMessage) {
   });
 }
 
-function updateC2Summary(option) {
+function updateM2Summary(option) {
   if (!option) {
     return;
   }
@@ -156,11 +156,11 @@ function updateC2Summary(option) {
   }
 }
 
-c2Options.forEach((option) => {
+m2Options.forEach((option) => {
   option.addEventListener("change", () => {
-    localStorage.setItem(storageKeys.c2Device, option.value);
+    localStorage.setItem(storageKeys.m2Meter, option.value);
     updatePlanPrices(option);
-    updateC2Summary(option);
+    updateM2Summary(option);
 
     if (formMessage) {
       formMessage.textContent = "";
@@ -170,23 +170,23 @@ c2Options.forEach((option) => {
 
   if (option.checked) {
     updatePlanPrices(option);
-    updateC2Summary(option);
+    updateM2Summary(option);
   }
 });
 
-function hydrateC2Selection() {
+function hydrateM2Selection() {
   hydratePlanSelection();
 
-  const savedC2 = localStorage.getItem(storageKeys.c2Device);
-  const savedOption = savedC2
-    ? document.querySelector(`input[name="c2Device"][value="${savedC2}"]`)
+  const savedM2 = localStorage.getItem(storageKeys.m2Meter);
+  const savedOption = savedM2
+    ? document.querySelector(`input[name="m2Meter"][value="${savedM2}"]`)
     : null;
-  const option = savedOption || getSelectedC2Option();
+  const option = savedOption || getSelectedM2Option();
 
   if (option) {
     option.checked = true;
     updatePlanPrices(option);
-    updateC2Summary(option);
+    updateM2Summary(option);
   }
 }
 
@@ -202,7 +202,7 @@ function refreshSubscriptionControls() {
   }
 }
 
-hydrateC2Selection();
+hydrateM2Selection();
 refreshSubscriptionControls();
 
 if (activateContractButton) {
